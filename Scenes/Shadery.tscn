@@ -1,11 +1,20 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Assets/Meshes/new_spheremesh.tres" type="SphereMesh" id=1]
+[ext_resource path="res://Assets/Meshes/new_planemesh.tres" type="PlaneMesh" id=2]
+[ext_resource path="res://Assets/Materials/glitch_displacement.tres" type="Material" id=3]
 
 [node name="Spatial" type="Spatial"]
 
 [node name="Sphere" type="Spatial" parent="."]
+visible = false
 
 [node name="MeshInstance" type="MeshInstance" parent="Sphere"]
 mesh = ExtResource( 1 )
 material/0 = null
+
+[node name="Plane" type="Spatial" parent="."]
+
+[node name="MeshInstance" type="MeshInstance" parent="Plane"]
+mesh = ExtResource( 2 )
+material/0 = ExtResource( 3 )
